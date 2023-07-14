@@ -48,10 +48,7 @@ if(alertMsg) {
 
 
 initAdmin() 
-
-
 // change order status 
-
 let statuses = document.querySelectorAll('.status_line')
 
 let hiddenInput = document.querySelector('#hiddenInput')
@@ -65,8 +62,6 @@ function updateStatus(order) {
         status.classList.remove('step-completed') 
         status.classList.remove('current')
     })
-
-
 
     let stepCompleted = true; 
     statuses.forEach((status) => {
@@ -89,6 +84,7 @@ updateStatus(order);
 
 // socket 
 let socket = io() 
+initAdmin(socket) 
 // join 
 if(order) {
     socket.emit('join', `order_${order._id}`)
@@ -96,6 +92,10 @@ if(order) {
 
 let adminAreaPath = window.location.pathname
 console.log(adminAreaPath)
+
+if(adminAreaPath.includes('admin')) {
+    socket.emit('join', 'adminRoom')
+}
 
 socket.on('orderUpdated', (data) => {
     const updatedOrder = {...order} 

@@ -1,9 +1,9 @@
 import axios from "axios"
-// import Noty from 'noty' 
+import Noty from 'noty' 
 import moment from "moment"
 
 
-export function initAdmin() {
+export function initAdmin(socket) {
     const orderTableBody = document.querySelector('#orderTableBody')
     // document.querySelector("#p2").style.color = "blue";
     // document.querySelector("#p2").style.fontFamily = "Arial";
@@ -92,7 +92,21 @@ export function initAdmin() {
             `
             }).join('')
     
-        }
+        } 
+    
+        socket.on('orderPlaced', (order) => {
+            new Noty ( {
+                type : 'success', 
+                timeout: 1000 , 
+                text: 'New order updated!' , 
+                progressBar: false ,  
+            } ).show();  
+
+            orders.unshift(order)
+            orderTableBody.innerHTML = '' 
+            orderTableBody.innerHTML = generateMarkup(orders) 
+
+        }) 
     
 } 
 

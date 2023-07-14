@@ -20,10 +20,18 @@ function orderConroller() {
             }) 
 
             order.save().then(result => {
-                req.flash('success', 'order placed successfully') 
+                Order.populate(result, { path:'customerId' }, (err , placedOrder) => {
+                    req.flash('success', 'order placed successfully') 
                 delete req.session.cart 
+
+                // emit 
+                const eventEmitter = req.app.get('eventEmitter') 
+                eventEmitter.emit('orderPlaced', placedOrder)
                 return res.redirect('/customers/orders') 
-            }).catch(err => {
+                })
+    
+            }) 
+            .catch(err => {
                 req.flash('error', 'Something went wrong')
                 return res.redirect('/cart') 
             })
