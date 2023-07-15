@@ -126,7 +126,7 @@ if (alertMsg) {
     alertMsg.remove();
   }, 2000);
 }
-(0,_admin__WEBPACK_IMPORTED_MODULE_1__.initAdmin)();
+
 // change order status 
 var statuses = document.querySelectorAll('.status_line');
 var hiddenInput = document.querySelector('#hiddenInput');

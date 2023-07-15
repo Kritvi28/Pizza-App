@@ -96,5 +96,5 @@ eventEmitter.on('orderUpdated', (data) => {
 })   
 
 eventEmitter.on('orderPlaces', () => {
-    io.to('adminRoom ').emit('orderPlaced', data)
+    io.to('adminRoom ').emit('orderPlaced', data) 
 })

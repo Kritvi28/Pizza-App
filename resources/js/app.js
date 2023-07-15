@@ -46,8 +46,6 @@ if(alertMsg) {
     }, 2000)
 } 
 
-
-initAdmin() 
 // change order status 
 let statuses = document.querySelectorAll('.status_line')
 
