@@ -211,4 +211,17 @@ section.status{
 .status-box ul li small{
     float: right; 
     font-size: 16px; 
+} 
+
+section.addItem{
+    background: $secondary; 
+    min-height: calc(100vh - 86px);
+} 
+
+.add{
+    height: 50vh;
+} 
+
+.btn{
+    color: $primary;
 }

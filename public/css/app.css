@@ -1009,3 +1009,16 @@ section.status {
   float: right;
   font-size: 16px;
 }
+
+section.addItem {
+  background: #F8F8F8;
+  min-height: calc(100vh - 86px);
+}
+
+.add {
+  height: 50vh;
+}
+
+.btn {
+  color: #FE5F1E;
+}

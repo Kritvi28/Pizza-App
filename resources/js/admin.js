@@ -20,7 +20,6 @@ export function initAdmin(socket) {
     }).then(res =>{
         orders = res.data
         markup = generateMarkup(orders) 
-        console.log(markup); 
         orderTableBody.innerHTML = markup
       }).catch(err =>{
         console.log(err) 

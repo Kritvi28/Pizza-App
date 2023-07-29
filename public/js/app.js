@@ -34,7 +34,6 @@ function initAdmin(socket) {
   }).then(function (res) {
     orders = res.data;
     markup = generateMarkup(orders);
-    console.log(markup);
     orderTableBody.innerHTML = markup;
   })["catch"](function (err) {
     console.log(err);

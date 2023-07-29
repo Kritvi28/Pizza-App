@@ -1,0 +1,59 @@
+<%- include('../partials/adminHeader.ejs') %>
+
+<section class="addItem flex justify-center pt-24">
+    <div class="add w-70 px-6 pt-6 pb-9 pt-5 bg-white">
+        <form action="/admin/addItem" method="post"> 
+        <div class="name">
+            <label>Name: </label>
+            <input type="name" value=""
+            placeholder="eg. Extra chesse pizza"
+            name="pizzaName"
+            required
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 
+            ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset 
+            focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            >
+        </div> <br>
+
+        <div class="image">
+            <label>Select Image: </label> 
+            <input type="file" value="" placeholder="Choose one image" alt=""
+            name="pizzaImage"
+            required
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 
+            ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset 
+            focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            > 
+        </div> <br>
+
+        <div class="price">
+            <label>Price: </label> 
+            <input type="text" value="" placeholder="Enter price"
+            name="pizzaPrice"
+            required
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 
+            ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset 
+            focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            >
+        </div> <br>
+
+        <div class="size">
+            <label>Select Size: </label> 
+            <select name="pizzaSize" required>
+                <option value="small"> Small</option>
+                <option value="medium" selected> Medium</option>
+                <option value="large"> Large</option>
+            </select>
+        </div> <br>
+
+        <div class="addBtn">
+            <button
+          type="submit"
+          name="add"
+          class="btn-primary justify-center rounded-full px-3 py-1.5 text-base">
+          Add
+        </button>
+        </div>
+    </form>
+    </div>
+</section>

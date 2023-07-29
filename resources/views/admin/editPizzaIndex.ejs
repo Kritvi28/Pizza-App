@@ -1,0 +1,27 @@
+<%- include('../partials/adminHeader.ejs') %>
+
+<section class="orders light-section">
+  <div class="contianer mx-auto pt-12">
+    <h1 class="font-bold text-lg mb-4">All Pizza</h1>
+
+    <table class="w-full table-auto bg-white">
+      <thead>
+        <tr>
+          <th class="px-4 py-2 text-left">Pizza Name</th>
+          <th class="px-4 py-2 text-left">Edit</th>
+          <th class="px-4 py-2 text-left">Remove</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%if(menu.length){%> <% menu.forEach((item)=>{ %>
+        <tr>
+          <td class="px-4 py-2 text-left"><%= item.name %> </a></td>
+          <td class="px-4 py-2 text-left"><a class="link" href="/admin/editPizza/<%= item._id %>"><img src="img/edit.png" alt=""></a></td>
+          <td class="px-4 py-2 text-left"><a class="link" href="/admin/removePizza/<%= item._id %>"><img src="img/remove.png" alt=""></a></td>
+        </tr>
+        <%})%> <%}%>
+      </tbody>
+    </table>
+  </div>
+</section>
